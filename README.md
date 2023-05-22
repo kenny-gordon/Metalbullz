@@ -7,8 +7,11 @@ Welcome to Metalbullz repository! This repository contains a collection of scrip
 
 Please refer to the following documentation for more information on using the framework:
 
+- [Singleton Documentation](Docs/Singleton.md)
 - [Event Manager Documentation](Docs/EventManager.md)
 - [State Machine Documentation](Docs/StateMachine.md)
+- [Pipeline Documentation](Docs/Pipelines.md)
+
 
 ## Installation
 
