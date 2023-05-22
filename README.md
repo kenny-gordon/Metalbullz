@@ -124,7 +124,7 @@ public class ChaseState : State
 }
 ```
 
-Each state class implements the OnEnter method, which is called when the state is entered, the OnExit method, which is called when the state is exited, and the OnUpdate method, which is called during each update tick of the state.
+Each state class implements the `OnEnter` method, which is called when the state is entered, the `OnExit` method, which is called when the state is exited, and the `OnUpdate` method, which is called during each update tick of the state.
 
 ## The Final Code
 
