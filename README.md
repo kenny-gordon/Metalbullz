@@ -7,8 +7,8 @@ Welcome to Metalbullz repository! This repository contains a collection of scrip
 
 Please refer to the following documentation for more information on using the framework:
 
-- [Event Manager Documentation](Docs/Event%20Manager.md)
-- [State Machine Documentation](Docs/State%20Machine.md)
+- [Event Manager Documentation](Docs/EventManager.md)
+- [State Machine Documentation](Docs/StateMachine.md)
 
 ## Installation
 
