@@ -31,11 +31,18 @@ private void Start()
     _stateMachine.AddTransition(new IdleState(), new ChaseState(), CanChase);
     _stateMachine.AddTransition(new AttackState(), new ChaseState(), CanChase);
     _stateMachine.AddTransition(new ChaseState(), new AttackState(), CanAttack);
-
+    
+    // Add transitions from any state to the desired state
+    _stateMachine.AddAnyTransition(new AttackState(), CanAttack);
+    _stateMachine.AddAnyTransition(new ChaseState(), CanChase);
+        
     // Set the initial state
     _stateMachine.ChangeState<IdleState>();
 }
 ```
+
+By using the `AddAnyTransition` method, you can specify a destination state and a condition function for transitioning from any state to that particular state. In the above example, we added transitions from any state to the `AttackState` and `ChaseState` based on the `CanAttack` and `CanChase` condition functions, respectively.
+
 ### Update
 
 In the `Update` method, the `Tick` method of the state machine is called on each frame to execute the update logic of the current state.
@@ -151,6 +158,10 @@ public class Enemy : MonoBehaviour
         _stateMachine.AddTransition(new IdleState(), new ChaseState(), CanChase);
         _stateMachine.AddTransition(new AttackState(), new ChaseState(), CanChase);
         _stateMachine.AddTransition(new ChaseState(), new AttackState(), CanAttack);
+        
+        // Add transitions from any state to the desired state
+        _stateMachine.AddAnyTransition(new AttackState(), CanAttack);
+        _stateMachine.AddAnyTransition(new ChaseState(), CanChase);
 
         // Set the initial state
         _stateMachine.ChangeState<IdleState>();
