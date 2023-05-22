@@ -35,13 +35,33 @@ private void Start()
     // Add transitions from any state to the desired state
     _stateMachine.AddAnyTransition(new AttackState(), CanAttack);
     _stateMachine.AddAnyTransition(new ChaseState(), CanChase);
-        
-    // Set the initial state
-    _stateMachine.ChangeState<IdleState>();
 }
 ```
 
 By using the `AddAnyTransition` method, you can specify a destination state and a condition function for transitioning from any state to that particular state. In the above example, we added transitions from any state to the `AttackState` and `ChaseState` based on the `CanAttack` and `CanChase` condition functions, respectively.
+
+In the example, the IdleState is the first state added to the state machine:
+```csharp
+_stateMachine.AddState<IdleState>();
+```
+
+The state machine will automatically use the `IdleState` as the initial state.
+
+If you want a different state to be the initial state, you can simply call the ChangeState method with the desired state type before starting the state machine.
+
+Here's the relevant code snippet for reference:
+
+```csharp
+// Add states to the state machine
+_stateMachine.AddState<IdleState>();
+_stateMachine.AddState<AttackState>();
+_stateMachine.AddState<ChaseState>();
+
+// ...
+
+// Set the initial state
+_stateMachine.ChangeState<IdleState>();
+```
 
 ### Update
 
