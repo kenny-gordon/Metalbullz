@@ -47,7 +47,7 @@ _stateMachine.AddState<IdleState>();
 
 The state machine will automatically use the `IdleState` as the initial state.
 
-If you want a different state to be the initial state, you can simply call the ChangeState method with the desired state type before starting the state machine.
+If you want a different state to be the initial state, you can simply call the `ChangeState` method with the desired state type before starting the state machine.
 
 Here's the relevant code snippet for reference:
 
